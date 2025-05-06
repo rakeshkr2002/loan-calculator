@@ -5,16 +5,18 @@ import { ThemeCurrencyContext } from "../Context-api/ThemeCurrencyContext";
 import "../css/Dashboard.css";
 import useEMI from "../hooks/UseEMi";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Schedule from "./Schedule";
 
 const Dashboard = () => {
   const { theme } = useContext(ThemeCurrencyContext);
   const [loanAmount, setLoanAmount] = useState(100000);
   const [interestRate, setInterestRate] = useState(8.5);
   const [term, setTerm] = useState(5);
-  const { emi, calculateEMI } = useEMI(loanAmount, interestRate, term);
+  const {  emi,schedule,calculateEMI } = useEMI();
 
   const handleCalculate = () => {
-    calculateEMI();
+
+    calculateEMI(loanAmount, interestRate, term);
   };
 
  
@@ -83,15 +85,10 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="emi-shown">
-          {emi && (
-            <div>
-              <p>Monthly EMI: ${emi}</p>
-            </div>
-          )}
-        </div>
+        
       </div>
-    </ThemeProvider>
+      <Schedule schedule={schedule} emi={emi} />
+      </ThemeProvider>
   );
 };
 
