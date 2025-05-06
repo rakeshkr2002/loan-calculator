@@ -6,7 +6,7 @@ const useExchangeRate = (currency) => {
 
   useEffect(() => {
     axios
-      .get(`https://v6.exchangerate-api.com/v6/YOUR_API_KEY/latest/${currency}`)
+      .get(`https://v6.exchangerate-api.com/v6/ad0c38c6bfd2a551a30044e9/latest/USD`)
       .then((response) => setRate(response.data.conversion_rates))
       .catch((error) => console.error("Error fetching exchange rates", error));
   }, [currency]);

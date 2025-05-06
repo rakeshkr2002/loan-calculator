@@ -1,0 +1,35 @@
+.exchange-rates {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+    overflow: scroll;
+}
+
+.exchange-rates h3 {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.exchange-rates p {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media screen  and(max-width: 600px)  {
+    .exchange-rates{
+        max-height: 80vh;
+        overflow: scroll;
+    }
+    
+}
