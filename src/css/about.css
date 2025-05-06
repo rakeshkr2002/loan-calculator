@@ -1,0 +1,39 @@
+
+.about {
+    margin-left: 40px;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .about h2,
+  .about h3 {
+    color: #333;
+    text-align: start;
+  }
+  
+  .about p {
+    font-size: 16px;
+    line-height: 1.6;
+    
+    margin-bottom: 10px;
+  }
+  
+  .about hr {
+    border: none;
+    height: 1px;
+  
+    margin: 20px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .about {
+      padding: 15px;
+      max-width: 90%;
+    }
+  
+    .about p {
+      font-size: 14px;
+    }
+  }
+  

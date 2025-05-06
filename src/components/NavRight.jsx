@@ -14,7 +14,9 @@ const NavRight = () => {
 
   return (
     <div className="nav-right">
+      
       <div>
+        <Link to="/">
         <Button 
           variant={activeButton === 'home' ? 'contained' : 'text'} 
           onClick={() => setActiveButton('home')}
@@ -22,6 +24,8 @@ const NavRight = () => {
         >
           HOME
         </Button>
+        </Link>
+        
       </div>
       <div>
         <Button 
@@ -33,6 +37,7 @@ const NavRight = () => {
         </Button>
       </div>
       <div>
+        <Link to="/about">
         <Button 
           variant={activeButton === 'about' ? 'contained' : 'text'} 
           onClick={() => setActiveButton('about')}
@@ -40,6 +45,7 @@ const NavRight = () => {
         >
           ABOUT
         </Button>
+        </Link>
       </div>
       <div>
         <Link to="/error_page">
