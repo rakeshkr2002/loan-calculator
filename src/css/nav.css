@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body{
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
@@ -13,7 +14,6 @@ body{
 
 .nav{
 height: 70px;
-background-color: #0a6fc8;
 width: 100%;
 display: flex;
 justify-content: space-between;
@@ -116,7 +116,7 @@ align-items: center;
     left: 0;
     background-color: white;
     color: black;
-    
+    z-index: 50;
     height: 100%;
     
     box-shadow: 0 4px 6px rgba(19, 18, 18, 0.9);
