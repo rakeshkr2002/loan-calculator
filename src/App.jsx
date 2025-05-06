@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage'
 import About from './components/About'
 import Dashboard from './components/Dashboard'
+import { ThemeCurrencyProvider } from './Context-api/ThemeCurrencyContext'
+import ExchangeRates from './components/ExchangeRates'
 
 let routes = createBrowserRouter([
   {
@@ -34,6 +36,10 @@ let routes = createBrowserRouter([
       {
         path:"/about",
         element:<About/>
+      },
+      {
+        path:"exchange_rates_live",
+        element:<ExchangeRates/>
       }
     ]
   },{
@@ -45,7 +51,9 @@ let routes = createBrowserRouter([
 const App = () => {
   return (
     <div>
+      <ThemeCurrencyProvider>
       <RouterProvider router={routes} />
+      </ThemeCurrencyProvider>
     </div>
   )
 }

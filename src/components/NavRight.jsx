@@ -28,13 +28,15 @@ const NavRight = () => {
         
       </div>
       <div>
+        <Link to="exchange_rates_live">
         <Button 
           variant={activeButton === 'exchange' ? 'contained' : 'text'} 
           onClick={() => setActiveButton('exchange')}
           className='nav-right-button nav-right-responsive'
-        >
+          >
           EXCHANGE RATES (LIVE)
         </Button>
+          </Link>
       </div>
       <div>
         <Link to="/about">

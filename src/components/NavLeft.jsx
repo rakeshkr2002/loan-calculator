@@ -39,9 +39,11 @@ const NavLeft = () => {
                 Home
               </li>
               </Link>
+              <Link to="/exchange_rates_live">
               <li className={activePage === 'Exchange Rates' ? 'active' : ''} onClick={() => setActivePage('Exchange Rates')}>
                 Exchange Rates
               </li>
+              </Link>
               <Link to="/about">
               <li className={activePage === 'About' ? 'active' : ''} onClick={() => setActivePage('About')}>
                 About
