@@ -4,73 +4,94 @@ import Button from "@mui/material/Button";
 import { ThemeCurrencyContext } from "../Context-api/ThemeCurrencyContext";
 import "../css/Dashboard.css";
 import useEMI from "../hooks/UseEMi";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const Dashboard = () => {
   const { theme } = useContext(ThemeCurrencyContext);
   const [loanAmount, setLoanAmount] = useState(100000);
   const [interestRate, setInterestRate] = useState(8.5);
   const [term, setTerm] = useState(5);
-
-  const { emi, calculateEMI } = useEMI(loanAmount, interestRate, term); // Pass arguments directly
+  const { emi, calculateEMI } = useEMI(loanAmount, interestRate, term);
 
   const handleCalculate = () => {
-    calculateEMI(); // Call function without arguments, as they are passed via hook
+    calculateEMI();
   };
 
-  return (
-    <div className="dashboard-container">
-      <div className="dashboard">
-        <div>
-          <p>Loan Calculator Dashboard</p>
-        </div>
-        <div
-          className="fields"
-          style={{ color: theme === "dark" ? "#fafafa" : "#292e32" }}
-        >
-          <TextField
-            required
-            id="outlined-required"
-            label="Loan Amount"
-            type="number"
-            value={loanAmount}
-            onChange={(e) => setLoanAmount(e.target.value)}
-            color="primary"
-          />
-          <TextField
-            required
-            id="outlined-required"
-            label="Interest Rate (%)"
-            type="number"
-            value={interestRate}
-            onChange={(e) => setInterestRate(e.target.value)}
-          />
-          <TextField
-            required
-            id="outlined-required"
-            label="Term (years)"
-            type="number"
-            value={term}
-            onChange={(e) => setTerm(e.target.value)}
-          />
-        </div>
-        <div className="button">
-          <Button variant="contained" onClick={handleCalculate}>
-            Calculate
-          </Button>
-        </div>
-      </div>
+ 
+  const muiTheme = createTheme({
+    palette: {
+      mode: theme,
+      primary: {
+        main: theme === "dark" ? "#0a6fc8" : "#0a6fc8",
+      },
+      background: {
+        default: theme === "dark" ? "#121212" : "#ffffff",
+        paper: theme === "dark" ? "#1e1e1e" : "#f5f5f5",
+      },
+      text: {
+        primary: theme === "dark" ? "#fafafa" : "#292e32",
+      },
+    },
+  });
 
-      <div
-        className="emi-shown"
-        style={{ color: theme === "dark" ? "#fafafa" : "#292e32" }}
-      >
-        {emi && (
+  return (
+    <ThemeProvider theme={muiTheme}>
+      <div className="dashboard-container">
+        <div className="dashboard">
           <div>
-            <p>Monthly EMI: ${emi}</p>
+            <p>Loan Calculator Dashboard</p>
           </div>
-        )}
+          <div className="fields">
+            <TextField
+              required
+              id="outlined-required"
+              label="Loan Amount"
+              type="number"
+              value={loanAmount}
+              onChange={(e) => setLoanAmount(e.target.value)}
+              variant="outlined"
+              color="primary"
+              sx={{ input: { color: muiTheme.palette.text.primary } }}
+            />
+            <TextField
+              required
+              id="outlined-required"
+              label="Interest Rate (%)"
+              type="number"
+              value={interestRate}
+              onChange={(e) => setInterestRate(e.target.value)}
+              variant="outlined"
+              color="primary"
+              sx={{ input: { color: muiTheme.palette.text.primary } }}
+            />
+            <TextField
+              required
+              id="outlined-required"
+              label="Term (years)"
+              type="number"
+              value={term}
+              onChange={(e) => setTerm(e.target.value)}
+              variant="outlined"
+              color="primary"
+              sx={{ input: { color: muiTheme.palette.text.primary } }}
+            />
+          </div>
+          <div className="button">
+            <Button variant="contained" onClick={handleCalculate}>
+              Calculate
+            </Button>
+          </div>
+        </div>
+
+        <div className="emi-shown">
+          {emi && (
+            <div>
+              <p>Monthly EMI: ${emi}</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 

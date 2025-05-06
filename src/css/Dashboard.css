@@ -28,13 +28,18 @@
 }
 
 .dashboard-container {
-    height: 280px; /* Adjust if 30vh is intended */
+    height: 280px;
     width: 100vw;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     flex-wrap: wrap;
+   
 }
+.emi-shown{
+    padding-left: 100px;
+}
+
 @media screen and (max-width: 600px) {
     .dashboard {
         padding: 10px;
@@ -60,7 +65,12 @@
     justify-content: space-between;
     flex-direction: column;
     flex-wrap: wrap;
-  }
+   
+
+}
+.emi-shown{
+    padding-left: 20px;
+}
     
 }
 

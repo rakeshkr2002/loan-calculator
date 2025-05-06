@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ThemeCurrencyContext } from '../Context-api/ThemeCurrencyContext';
 
 const NavRight = () => {
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState('home');
   const { toggleTheme } = useContext(ThemeCurrencyContext);
   const [isToggled, setIsToggled] = useState(false);
 

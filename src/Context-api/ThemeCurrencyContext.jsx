@@ -9,6 +9,7 @@ export const ThemeCurrencyProvider = ({ children }) => {
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
+  
 
   const changeCurrency = (newCurrency) => setCurrency(newCurrency);
 
