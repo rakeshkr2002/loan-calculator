@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavLeft = () => {
   const [open, setOpen] = useState(false);
@@ -33,18 +34,22 @@ const NavLeft = () => {
           <div className={`menu-dropdown ${open ? 'open' : ''}`}>
 
             <ul>
+              <Link to="/">
               <li className={activePage === 'Home' ? 'active' : ''} onClick={() => setActivePage('Home')}>
                 Home
               </li>
+              </Link>
               <li className={activePage === 'Exchange Rates' ? 'active' : ''} onClick={() => setActivePage('Exchange Rates')}>
                 Exchange Rates
               </li>
               <li className={activePage === 'About' ? 'active' : ''} onClick={() => setActivePage('About')}>
                 About
               </li>
+              <Link to="/error_page" >
               <li className={activePage === 'Error Page' ? 'active' : ''} onClick={() => setActivePage('Error Page')}>
                 Error Page
               </li>
+              </Link>
             </ul>
           </div>
         )}

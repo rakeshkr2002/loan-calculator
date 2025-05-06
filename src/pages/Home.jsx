@@ -1,14 +1,14 @@
-import React from 'react'
-// import Nav from '../components/Nav'
-import ErrorPage from './ErrorPage'
+import React from "react";
+import Nav from "../components/Nav";
+import Dashboard from "../components/Dashboard";
 
 const Home = () => {
   return (
     <div>
-      {/* <Nav></Nav> */}
-      <ErrorPage></ErrorPage>
+      <Nav />
+      <Dashboard />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

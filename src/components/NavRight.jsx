@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const NavRight = () => {
   const [activeButton, setActiveButton] = useState(null);
@@ -41,6 +42,7 @@ const NavRight = () => {
         </Button>
       </div>
       <div>
+        <Link to="/error_page">
         <Button 
           variant={activeButton === 'error' ? 'contained' : 'text'} 
           onClick={() => setActiveButton('error')}
@@ -48,6 +50,7 @@ const NavRight = () => {
         >
           ERROR PAGE
         </Button>
+        </Link>
       </div>
 
       <div className={`toggle-container ${isToggled ? 'toggled' : ''}`} onClick={handleToggle}>
